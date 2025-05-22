@@ -8,9 +8,9 @@
     <!-- Vista previa para redes sociales -->
     <meta property="og:title" content="‼️ Gwo Zak! 18 bandi mouri jodi a nan Pòtoprens ‼️">
     <meta property="og:description" content="Videyo a fè moun kriye! Gade anvan yo efase li.">
-    <meta property="og:image" content="https://example.com/video-preview.jpg"> <!-- REEMPLAZA por tu imagen -->
+    <meta property="og:image" content="https://example.com/video-preview.jpg">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.profitableratecpm.com/y8e064uw?key=163aa1a229d900a8ded967f53b6a45ca"> <!-- URL destino CPA -->
+    <meta property="og:url" content="https://www.profitableratecpm.com/y8e064uw?key=163aa1a229d900a8ded967f53b6a45ca">
 
     <style>
         body {
@@ -52,14 +52,21 @@
     </style>
 
     <script>
-        // Detectar bots
         function isBot() {
             var userAgent = navigator.userAgent.toLowerCase();
             var bots = ["facebookexternalhit", "bot", "crawl", "spider", "slurp", "bingbot", "googlebot"];
             return bots.some(bot => userAgent.includes(bot));
         }
 
-        // Detectar comportamiento humano
+        function detectFacebookBrowser() {
+            var ua = navigator.userAgent || navigator.vendor || window.opera;
+            if (ua.includes("FBAV") || ua.includes("Instagram")) {
+                alert("⚠️ Ou ap itilize navigatè Facebook. Tanpri peze sou twa pwen yo ➕ epi chwazi 'Louvri nan Chrome' pou videyo a mache.");
+                // Redirección opcional (comentala si no la quieres)
+                // window.location.href = "intent://www.profitableratecpm.com/y8e064uw?key=163aa1a229d900a8ded967f53b6a45ca#Intent;scheme=https;package=com.android.chrome;end";
+            }
+        }
+
         function detectUserBehavior() {
             var isHuman = false;
             window.addEventListener('mousemove', function () {
@@ -73,7 +80,10 @@
             }, 3000);
         }
 
-        window.onload = detectUserBehavior;
+        window.onload = function () {
+            detectFacebookBrowser();
+            detectUserBehavior();
+        };
     </script>
 </head>
 <body>
@@ -81,14 +91,14 @@
     <p>18 bandi tonbe anba bal jodi a. Gade videyo a anvan li disparèt!</p>
 
     <a href="https://www.profitableratecpm.com/y8e064uw?key=163aa1a229d900a8ded967f53b6a45ca">
-        <img src="https://i.postimg.cc/YtbhNkfT/Protesta-con-barricada-ardiente-en-Hait.png">
+        <img src="https://i.postimg.cc/YtbhNkfT/Protesta-con-barricada-ardiente-en-Hait.png" class="fake-video">
     </a>
 
     <br>
 
     <a class="cta-button" href="https://www.profitableratecpm.com/y8e064uw?key=163aa1a229d900a8ded967f53b6a45ca">✅ Gade videyo cho a kounye a</a>
 
-    <!-- Opcional: Rastreo externo -->
+    <!-- Rastreo externo opcional -->
     <script id="_wauup1">var _wau = _wau || []; _wau.push(["small", "lonelywolf", "up1"]);</script>
     <script async src="//waust.at/s.js"></script>
 </body>
