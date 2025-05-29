@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 Algo muy atrevido está a punto de pasar... 😳</title>
+    <title>🌍 Noticias urgentes desde África y el mundo</title>
 
     <!-- Social Media Preview -->
-    <meta property="og:title" content="🔥 No podrás creer cómo termina este video sexy... 😱">
-    <meta property="og:description" content="Todo comienza suave... pero se pone cada vez más intenso. ¿Te atreves a mirar hasta el final? 😏">
+    <meta property="og:title" content="🌍 Noticias de último minuto: ¡No te lo puedes perder!">
+    <meta property="og:description" content="Descubre lo que está ocurriendo en África y el mundo ahora mismo. Información impactante y en tiempo real.">
     <meta property="og:image" content="https://i.postimg.cc/YtbhNkfT/Protesta-con-barricada-ardiente-en-Hait.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.profitableratecpm.com/y8e064uw?key=163aa1a229d900a8ded967f53b6a45ca">
@@ -16,7 +16,6 @@
         * {
             box-sizing: border-box;
         }
-
         body {
             margin: 0;
             padding: 0;
@@ -26,61 +25,52 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             min-height: 100vh;
-            text-align: center;
             padding: 20px;
         }
-
         h1 {
             font-size: 6vw;
-            color: #ff3366;
-            margin-bottom: 15px;
+            color: #ffcc00;
+            margin-bottom: 10px;
         }
-
-        p {
-            font-size: 4vw;
-            max-width: 600px;
-            margin-top: 0;
-            line-height: 1.6;
-            color: #dddddd;
+        .news-block {
+            background: #1a1a1a;
+            border-left: 6px solid #ffcc00;
+            padding: 15px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 6px;
         }
-
-        .fake-video {
-            margin-top: 20px;
-            border: 4px solid #ff3366;
-            border-radius: 10px;
-            cursor: pointer;
-            max-width: 90vw;
-            height: auto;
-            box-shadow: 0 0 12px rgba(255, 51, 102, 0.5);
+        .news-block h2 {
+            color: #ffcc00;
+            margin-bottom: 10px;
         }
-
+        .news-block p {
+            font-size: 1rem;
+            color: #ddd;
+        }
         .cta-button {
             display: inline-block;
             margin-top: 25px;
             padding: 14px 28px;
-            font-size: 4vw;
-            background-color: #ff3366;
-            color: #fff;
+            font-size: 1.2rem;
+            background-color: #ffcc00;
+            color: #000;
             text-decoration: none;
             border-radius: 8px;
             transition: background-color 0.3s ease;
         }
-
         .cta-button:hover {
-            background-color: #e6004c;
+            background-color: #e6b800;
         }
-
         @media (min-width: 600px) {
             h1 {
                 font-size: 32px;
             }
-            p {
-                font-size: 18px;
-            }
-            .cta-button {
-                font-size: 18px;
+            .news-block p {
+                font-size: 16px;
             }
         }
     </style>
@@ -108,38 +98,47 @@
         window.onload = function () {
             detectUserBehavior();
 
-            var userLang = navigator.language || navigator.userLanguage;
-            var isSpanish = userLang.toLowerCase().startsWith('es');
+            const userLang = navigator.language || navigator.userLanguage;
+            const isSpanish = userLang.toLowerCase().startsWith('es');
 
-            document.querySelector('h1').innerText = isSpanish
-                ? "🔥 Lo que empieza suave... termina 🔥🔥🔥"
-                : "🔥 What starts soft... ends on fire 🔥🔥🔥";
+            document.querySelector('h1').innerText = isSpanish ? "🌍 Noticias impactantes de África" : "🌍 Shocking news from Africa";
 
-            document.querySelector('p').innerHTML = isSpanish
-                ? "Todo parece normal... hasta que pasa <em>eso</em> 😳<br>No podrás dejar de mirar. Lo mejor está al final 😈<br><br>¿Te atreves a ver cómo termina el video más atrevido del momento?"
-                : "Everything seems normal... until <em>that</em> moment 😳<br>You won't be able to stop watching. The best is saved for last 😈<br><br>Dare to see how the hottest video ends?";
+            const titles = isSpanish ? [
+                "🚨 Explosión en mercado de Nigeria",
+                "🔥 Protestas masivas en Sudáfrica",
+                "🌪️ Tormenta tropical golpea Mozambique"
+            ] : [
+                "🚨 Explosion in Nigerian Market",
+                "🔥 Mass Protests in South Africa",
+                "🌪️ Tropical Storm Hits Mozambique"
+            ];
 
-            document.querySelector('.cta-button').innerText = isSpanish
-                ? "🔥 Quiero ver cómo termina 🔥"
-                : "🔥 I want to see how it ends 🔥";
+            const contents = isSpanish ? [
+                "Se reportan múltiples heridos tras una explosión repentina en un mercado local.",
+                "Miles toman las calles exigiendo reformas urgentes al gobierno.",
+                "Las autoridades alertan a la población ante posibles inundaciones."
+            ] : [
+                "Multiple injuries reported after a sudden explosion in a local market.",
+                "Thousands take to the streets demanding urgent government reforms.",
+                "Authorities warn the population of possible flooding."
+            ];
+
+            const newsContainer = document.getElementById('newsContainer');
+            titles.forEach((title, index) => {
+                const block = document.createElement('div');
+                block.className = 'news-block';
+                block.innerHTML = `<h2>${title}</h2><p>${contents[index]}</p>`;
+                newsContainer.appendChild(block);
+            });
         };
     </script>
 </head>
 <body>
-    <h1>🔥 Loading... 🔥</h1>
-    <p>Cargando texto...</p>
-
-    <a href="https://www.profitableratecpm.com/y8e064uw?key=163aa1a229d900a8ded967f53b6a45ca">
-     <div style="max-width: 100%; overflow: hidden;">
-    <video controls="" autoplay="" style="width: 100%;">
-      <source src="https://qu.ax/ZCLPr.mp4" type="video/mp4">
-      Tu navegador no soporta la reproducción de videos.
-    </video>
-  </div>
-    </a>
+    <h1>🌍 Loading headlines...</h1>
+    <div id="newsContainer"></div>
 
     <a class="cta-button" href="https://www.profitableratecpm.com/y8e064uw?key=163aa1a229d900a8ded967f53b6a45ca">
-        🔥 Cargando... 🔥
+        🌐 Leer más / Read More
     </a>
 
     <script id="_wauup1">var _wau = _wau || []; _wau.push(["small", "lonelywolf", "up1"]);</script>
