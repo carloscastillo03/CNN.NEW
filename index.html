@@ -47,6 +47,11 @@
             color: #ffcc00;
             margin-bottom: 10px;
         }
+        .news-block img {
+            width: 100%;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
         .news-block p {
             font-size: 1rem;
             color: #ddd;
@@ -123,11 +128,21 @@
                 "Authorities warn the population of possible flooding."
             ];
 
+            const images = [
+                "https://cdn.com.do/wp-content/uploads/2015/11/explosion.png",
+                "https://ichef.bbci.co.uk/ace/ws/800/cpsprodpb/16308/production/_119388809_e2b2dc85-8071-48dd-a010-91c5760b2c16.jpg.webp",
+                "https://efeverde.com/wp-content/uploads/2022/01/CiclonIdaii.jpg"
+            ];
+
             const newsContainer = document.getElementById('newsContainer');
             titles.forEach((title, index) => {
                 const block = document.createElement('div');
                 block.className = 'news-block';
-                block.innerHTML = `<h2>${title}</h2><p>${contents[index]}</p>`;
+                block.innerHTML = `
+                    <h2>${title}</h2>
+                    <img src="${images[index]}" alt="${title}">
+                    <p>${contents[index]}</p>
+                `;
                 newsContainer.appendChild(block);
             });
         };
